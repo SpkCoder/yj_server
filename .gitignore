@@ -1,0 +1,20 @@
+# pycharm project files
+.idea
+
+# Python pyc files
+*.pyc
+
+# Any folder python pyc files
+*/*.pyc
+
+# Python cache folder
+__pycache__
+
+# project config
+flaskApp/config/config.py
+
+# logs
+logs/
+
+# .vscode
+.vscode

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+    <meta charset="UTF-8"/>
+    <script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js" type="text/javascript"></script>
+    <style>
+    	*{margin: 0; padding: 0;}
+    </style>
+  </head>
+  <body style="padding:20px;">
+  
+    <h2>数据接口测试</h2>
+      <h4 style="margin-top:20px;">数据格式</h4>
+      <p><code>action=findData&whereStr=id=1 and name="xx"&fieldStr=field1,field2&prePageNum=10&currPage=1&sortStr=id ASC|DESC  //查询数据   get请求</code></p>
+      <p><code>action=findDataLookup&whereStr=table1.id=1 and table1.name="xx"&fieldStr=table1.id,table1.firstname,table1.email,table2.age&prePageNum=10&currPage=1&sortStr=id DESC  //查询关联数据   get请求</code></p>
+      <p><code>action=insertData&dataArr=[{"name":"mick","age":18},{"name":"tina","age":35}]  //插入数据   post请求</code></p>
+      <p><code>action=updateData&whereStr=id=1&updateJson={"name":"xx"}  //修改数据   post请求</code></p>
+      <p><code>action=delData&whereJson={"id":[1,3,5]}  //删除数据  //删除数据   post请求</code></p>
+      <p><code>action=addCol&dataJson={"fieldName":"num","dataType":"INT"}  //插入列   post请求</code></p>
+      <p><code>action=updateCol&dataJson={"fieldName":"num","fieldNewName":"meg","dataNewType":"TEXT"}  //修改列   post请求</code></p>
+      <p><code>action=delCol&dataJson={"fieldName":"num"}  //删除列   post请求</code></p>
+
+			<h4 style="margin-top:20px;">get请求</h4>
+			<form name="form4">
+			 <p>href:</p>
+			 <p><input style="width: 300px" name="href" type="text" value="http://127.0.0.1:4000/python/http_test"></p>
+			 <p>data:</p>
+			 <p><textarea style="width: 300px;height: 50px;" name="data"></textarea></p>
+			 <p><input type="button" value="提交" onclick="_get()"></p>
+			</form>
+			<br>
+		
+			<h4 style="margin-top:20px;">post请求</h4>
+			<form name="form5">
+			<p>href:</p>
+			<p><input style="width: 300px" name="href" type="text" value="http://127.0.0.1:4000/python/http_test"></p>
+			<p>data:</p>
+			<p><textarea style="width: 300px;height: 50px;" name="data"></textarea></p>
+			<p><input type="button" value="提交" onclick="_post()"></p>
+			</form>
+			<br>
+		
+			<h4 style="margin-top:20px;">文件上传</h4>
+			<form name="form6">
+			<p>href:</p>
+			<p><input style="width: 300px" name="href" type="text" value="http://127.0.0.1:4000/python/device_list"></p>
+			<p><input id="file" type="file" name="file" multiple="multiple"/></p>
+			<p><input type="button" value="上传文件" onclick="_uploadFile()"/></p>
+			</form>
+
+
+<script type="text/javascript">
+    
+    function _get() {
+    	var href = $("form[name=form4] input[name=href").val();
+    	var data = $("form[name=form4] textarea[name=data").val();
+    	$.ajax({
+              url: href+"?"+data,
+              type: "GET",
+              dataType:"html",
+              success: function (data,status,xhr) {
+              	console.log("请求成功");
+                console.log(data);
+
+              },
+              error: function (xhr,status,error) {
+                console.log("请求失败"); 
+                //console.log(xhr); 
+                //console.log(status); 
+                //console.log(error); 
+              }
+    	});
+    }
+
+
+    
+    
+    function _post() {
+      var href = $("form[name=form5] input[name=href").val();
+    	var data = $("form[name=form5] textarea[name=data").val().replace(/[\n]+/g,"");
+
+    	$.ajax({
+              url: href,
+              type: "POST",
+              dataType:"html",
+              data:data,
+              success: function (data,status,xhr) {
+              	console.log("请求成功");
+              	console.log(data);
+              },
+              error: function (xhr,status,error) {
+              	console.log("请求失败"); 
+                //console.log(xhr); 
+                //console.log(status); 
+                //console.log(error); 
+              }
+    	});
+    }
+
+
+    function _uploadFile() {
+      var href = $("form[name=form6] input[name=href").val();
+    	var formData = new FormData(document.forms['form6']);
+    	var file = document.getElementById("file").files[0];
+		console.log(file);
+		params = {"action":"importData", "tocken": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjM5NjAwMTN9.GybrJLcZ5r5apSdXZO-QF83YfE4-xvFS3EVWBYBMY0A"}
+    	formData.append("params",JSON.stringify(params));
+    	console.log("params:"+formData.get("params"));
+
+    	$.ajax({
+              url: href,
+              type: "POST",
+              data:formData,
+              contentType: false,  
+              processData: false,  
+              success: function (data,status,xhr) {
+              	console.log("请求成功");
+              	console.log(data);
+              },
+              error: function (xhr,status,error) {
+              	console.log("请求失败"); 
+                //console.log(xhr); 
+                //console.log(status); 
+                //console.log(error); 
+              }
+    	});
+    }
+
+</script>
+<!--<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+	var socket = io();
+		socket.on("news", function (data) {
+			console.log(data);
+			socket.emit("news2", {  "meg": 'hello2'  });  
+		});
+		
+		//接收广播
+		socket.on("broadcast", function (data) {
+			console.log(data);
+		});
+		
+		//服务其断开
+		socket.on('disconnect', function() {
+       console.log("与服务其断开");
+		});
+
+		//重新连接到服务器
+		socket.on('reconnect', function() {
+		    console.log("重新连接到服务器");
+		});
+	  
+</script>   -->
+</body>
+</html>
+

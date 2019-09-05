@@ -1,0 +1,1393 @@
+{
+	"info": {
+		"_postman_id": "1b90dafe-8071-4c1d-8716-34b7564c1aca",
+		"name": "yj-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "二维码",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"getCode\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"login"
+					]
+				},
+				"description": "/python/login?params={%22action%22:%22getCode%22}"
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_登录",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"SignIn\", \"username\":\"admin\",\"password\":\"123456\", \"code\":\"ISXA\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_退出",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"action\":\"SignOut\", \"username\":\"admin\", \"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNjkzMDEzLCJyb2xlX2lkIjoxfQ.XA6iMykMe1UaGfHnP0IdfHNMUDD3jFuIc2NsnpVwqZc\"}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_修改密码",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateData\",\n    \"whereJson\": {\n        \"username\": \"admin\",\n        \"password\": \"123456\"\n    },\n    \"updateJson\": {\n        \"password\": \"12345678\"\n    },\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjMzODIwNDN9.xs5LWzseaK3s90aRPMkDr-o3cEmcu9FQycAWm_wd9RE\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/login",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "菜单menu",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjM1MzU5NDJ9.vSN19QJaiBSNp4t3tETQtC--rFcCNjzW08L-Os_uN-w\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/menu",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_角色分类_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"findData\",\n\"limit\":10,\n\"page\":1,\n\"whereJson\": {},\n\"sortJson\":{},\n\"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNzY2ODY1LCJyb2xlX2lkIjoxfQ.QRmrSoHFvbigYnicRmD1-9WtD0XMrIvNC_14gphmei4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/role_class",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"role_class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_角色分类_增加",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"insertData\",\n    \"dataArr\": [{ \"class_name\": \"超级用户\"}],\n    \"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNzY2ODY1LCJyb2xlX2lkIjoxfQ.QRmrSoHFvbigYnicRmD1-9WtD0XMrIvNC_14gphmei4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/role_class",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"role_class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_角色分类_修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"updateData\",\n\"whereJson\":{\"id\":1},\n\"updateJson\":{\"class_name\":\"超级用户2\"},\n\"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNzY2ODY1LCJyb2xlX2lkIjoxfQ.QRmrSoHFvbigYnicRmD1-9WtD0XMrIvNC_14gphmei4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/role_class",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"role_class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_角色分类_删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"delData\",\n\"whereJson\":{\"id\":[1,3]},\n\"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNzY2ODY1LCJyb2xlX2lkIjoxfQ.QRmrSoHFvbigYnicRmD1-9WtD0XMrIvNC_14gphmei4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/role_class",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"role_class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_角色权限_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"findData\",\n\"whereJson\": {\"role_id\":1},\n\"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ5OTc0NTJ9.yL5BTbHTWKFW0bQktpn2ApunL7mcTVUcRN1o1d8cXK8\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/power_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"power_list"
+					]
+				},
+				"description": "whereJson.role_id 必传"
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_角色权限_修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"updateData\",\n\"whereJson\":{\"role_id\":1},\n\"updateJson\":{\"fn_id\":[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28]},\n\"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ3NDI0NDF9.gwCpYxPjnNM6_iJAh9fw9Ul9i9V4wTALrA4ReHTBegk\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/power_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"power_list"
+					]
+				},
+				"description": "把checked=true的id放到fn_id数组里面"
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_用户列表_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"findData\",\n\"limit\":10,\n\"page\":1,\n\"whereJson\": {},\n\"sortJson\":{},\n\"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZV9pZCI6MSwiZXhwIjoxNTYzMzU1MTkzfQ.TC_RWXpjrcOQHZZz8zzyDYOi9JhsXsIbx9fD3Ip3rk0\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"user_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_用户列表_增加",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"insertData\",\n    \"dataArr\": [\n        {\n            \"username\": \"peter2\",\n            \"password\": \"123456\",\n            \"name\": \"匿名\",\n            \"email\": \"15331650@qq.com\",\n            \"phone\": \"16675199666\",\n            \"sex\": \"男\",\n            \"age\": 18,\n            \"message\": \"\",\n            \"role_id\":1\n        }\n    ],\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicm9sZV9pZCI6MSwiZXhwIjoxNTYzMzU1MTkzfQ.TC_RWXpjrcOQHZZz8zzyDYOi9JhsXsIbx9fD3Ip3rk0\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"user_list"
+					]
+				},
+				"description": "username 必填;\npassword 必填;\nemail 必填;\nrole_id 必填;\n其余的可传空字符串；"
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_用户列表_修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"updateData\",\n\"whereJson\":{\"username\":\"peter\"},\n\"updateJson\":{\"name\":\"xx\"},\n\"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNzY2ODY1LCJyb2xlX2lkIjoxfQ.QRmrSoHFvbigYnicRmD1-9WtD0XMrIvNC_14gphmei4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"user_list"
+					]
+				},
+				"description": "username 禁止修改;"
+			},
+			"response": []
+		},
+		{
+			"name": "用户模块_用户列表_删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"delData\",\n\"whereJson\":{\"username\":[\"peter\"]},\n\"tocken\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiZXhwIjoxNTYyNzY2ODY1LCJyb2xlX2lkIjoxfQ.QRmrSoHFvbigYnicRmD1-9WtD0XMrIvNC_14gphmei4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"user_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "业务管理_DNS问询统计_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"findData\",\n\"whereJson\":{\"time_start\": \"2019-08-20 08:12:15\",\"time_end\": \"2019-08-20 09:18:35\",\"type\": \"5M\",\"ip\": \"192.168.200.3\"},\n\"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjYyOTQ0MDd9.JNJW0F3l_OvkQbU_RUa4RelAweLeQSQ9UNfbtAZTPZ4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/dns_req_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"dns_req_list"
+					]
+				},
+				"description": "whereJson.time_start必传, 默认当天 0时0分0秒；\nwhereJson.time_end必传, 默认当天 当前时分秒；\nwhereJson.type必传, 默认5M 1H/5M/1M可选；\nwhereJson.ip可传，传则查询，不传则不查询，ip查询是个select，从设备列表接口获取；"
+			},
+			"response": []
+		},
+		{
+			"name": "业务管理_DNS问询统计_导出",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\"action\":\"exportData\",\n\"whereJson\":{\"time_start\": \"2019-08-20 08:12:15\",\"time_end\": \"2019-08-20 09:18:35\",\"ip\": \"192.168.200.3\"},\n\"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjYyOTQ0MDd9.JNJW0F3l_OvkQbU_RUa4RelAweLeQSQ9UNfbtAZTPZ4\"\n}\n"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:6000/api/python/dns_req_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "6000",
+					"path": [
+						"api",
+						"python",
+						"dns_req_list"
+					]
+				},
+				"description": "whereJson.time_start必传, 为搜索位置的开始时间；\nwhereJson.time_end必传, 为搜索位置的结束时间；\nwhereJson.ip可传，搜索位置的ip有值则传，无值则不传；"
+			},
+			"response": []
+		},
+		{
+			"name": "业务管理_Top资源统计_导出",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"exportData\",\n    \"limit\":10,\n\t\"page\":1,\n    \"whereJson\": {\n        \"type\": \"host\",\n        \"client_host\": \"/mtalk.google.com/\",\n        \"server_ip\": \"192.168.200.3\",\n        \"log_time\": {\"$gte\":\"2019-08-20 08:12:15\",\"$lt\":\"2019-08-20 09:18:35\"}\n    },\n    \"sortJson\":{\"num\":-1},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjYzODMzOTV9.zlJ1VP_axwKdRUPJT5NCgPM2UI_w10wAeAmQ-vRzFBU\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/top_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"top_list"
+					]
+				},
+				"description": "whereJson 传当前查询状态的whereJson；"
+			},
+			"response": []
+		},
+		{
+			"name": "业务管理_地址利用率统计_下钻_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {\"client_ip\": \"192.168.200.0/24\", \"time\": \"2019-08-14\"},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjU3ODc3ODZ9.JP4BTmalRFpf94akxLvTpVNjhOgt13rqzd4MVG_uswM\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/address_rate_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"address_rate_list"
+					]
+				},
+				"description": "whereJson.client_ip 必传； whereJson.time 必传，默认为当天；"
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_服务端操作审计报表_导出",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"exportData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {},\n    \"sortJson\": {\"log_time\": -1},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjY0NjkzMDR9.duGHyamlf-mro24KZT1BrPQKYybsov91Y2V1hgiZCCc\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/operation_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"operation_list"
+					]
+				},
+				"description": "whereJson传当前搜索状态下的whereJson"
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备总览_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": -1,\n    \"page\": 1,\n    \"whereJson\": {\"type\": \"device_list_icon\"},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjY0NjkzMDR9.duGHyamlf-mro24KZT1BrPQKYybsov91Y2V1hgiZCCc\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				},
+				"description": "\"limit\": -1 不限制条数;\nwhereJson.type= \"device_list_icon\" 必传;"
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备列表_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {},\n    \"sortJson\": {},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ0ODI0NzZ9.ac5esT1cCbkIx4tIRZgas9SmcBl99LFb-n80dJ5J7t0\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备列表_增加",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"insertData\",\n    \"dataArr\": [\n        {\n            \"code\": \"A00004\",\n            \"name\": \"设备四\",\n            \"ip\": \"192.168.200.198\",\n            \"level\": \"杭州\",\n            \"factory\": \"华为\",\n            \"device_type\": \"infoblox\",\n            \"os\": \"window\",\n            \"os_version\": \"10.0.1\",\n            \"cpu\": \"酷睿8核\",\n            \"ram\": \"4G\",\n            \"disk\": \"500G\",\n            \"power\": \"100W\",\n            \"address\": \"杭州市西湖区xx街道\",\n            \"message\": \"xx\",\n            \"online_time\": \"2019-07-20\"\n        }\n    ],\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjU3ODc3ODZ9.JP4BTmalRFpf94akxLvTpVNjhOgt13rqzd4MVG_uswM\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				},
+				"description": "code 必填;\nname 必填;\nip 必填;\nlevel 必填;\n其余的可传空字符串；"
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备列表_修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateData\",\n    \"whereJson\": {\n        \"id\": 1\n    },\n    \"updateJson\": {\n        \"message\": \"xx\",\n        \"ip\": \"192.168.200.3\"\n    },\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjU3ODc3ODZ9.JP4BTmalRFpf94akxLvTpVNjhOgt13rqzd4MVG_uswM\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备列表_删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"delData\",\n    \"whereJson\": {\"id\": [2]},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjM4OTAwMTB9.l1XD0ritgKK-7BuS0rtFtm4VjbFyo2XlFXDdQonwVXY\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备列表_导入",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "multipart/form-data"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "params",
+							"value": "{\"action\":\"importData\",\"tocken\":\"5apSdEVWBYBMY0A\"}",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"value": "document.getElementById(\"file_id\").files[0]",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				},
+				"description": "input id=\"file_id\" type=\"file\" name=\"file\" multiple=\"multiple\"；\nvar formData = new FormData(document.forms['form1'])；\nformData.append(\"params\",JSON.stringify({\"action\":\"importData\", \"tocken\": \"eyJ0eXAiOiJK}))；"
+			},
+			"response": []
+		},
+		{
+			"name": "设备管理_设备列表_导出",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"exportData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjM5NjAwMTN9.GybrJLcZ5r5apSdXZO-QF83YfE4-xvFS3EVWBYBMY0A\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/device_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"device_list"
+					]
+				},
+				"description": "返回导出的URL，前端下载；"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_告警阈值配置_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {},\n    \"sortJson\": {},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ3NDI0NDF9.gwCpYxPjnNM6_iJAh9fw9Ul9i9V4wTALrA4ReHTBegk\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_type_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_type_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_告警阈值配置_修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateData\",\n    \"whereJson\": {\n        \"id\": 1\n    },\n    \"updateJson\": {\n        \"status\": \"OFF\"\n    },\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ3NDI0NDF9.gwCpYxPjnNM6_iJAh9fw9Ul9i9V4wTALrA4ReHTBegk\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_type_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_type_list"
+					]
+				},
+				"description": "code 禁止修改;\nname 禁止修改;\nip 禁止修改;"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_告警邮件配置_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {},\n    \"sortJson\": {},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjUxMDg3NzJ9.8NzU_MyiE03nAqXWa10mr34ZMw7NtjNHniKiFu-YB1E\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/email_user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"email_user_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_告警邮件配置_增加",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"insertData\",\n    \"dataArr\": [\n        {\n            \"email\": \"yuxian@suqueen.com\",\n            \"message\": \"\"\n        }\n    ],\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjUxMDg3NzJ9.8NzU_MyiE03nAqXWa10mr34ZMw7NtjNHniKiFu-YB1E\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/email_user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"email_user_list"
+					]
+				},
+				"description": "email 必填;\n其余的可传空字符串；"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_告警邮件配置_删除",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"delData\",\n    \"whereJson\": {\"id\": [1]},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjUxMDg3NzJ9.8NzU_MyiE03nAqXWa10mr34ZMw7NtjNHniKiFu-YB1E\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/email_user_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"email_user_list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_活动告警_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {\"group\": \"true\", \"status\": 1},\n    \"sortJson\": {},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjUwMjc0OTd9.0K91srUWOlfLD_1g9akw7A5c6muPTQt1DCqCBmOzLaw\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_list"
+					]
+				},
+				"description": "whereJson.group=\"true\" 必传；\nwhereJson.status=1 必传；\nwhereJson.client_ip 可传；\nwhereJson.alarm_type_id 可传；"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_活动告警_下钻_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {\"client_ip\": \"192.168.200.3\", \"alarm_type_id\": 6, \"status\": 1},\n    \"sortJson\": {\"alarm_time\": -1},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjUzNDMwODF9.gbE9WhZFEFnCrFNZV2XY_6WSAmeTXuwDZmq4znG_iJE\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_list"
+					]
+				},
+				"description": "whereJson.status=1 必传"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_历史告警_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {\"group\": \"true\", \"status\": 0},\n    \"sortJson\": {},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ5OTc0NTJ9.yL5BTbHTWKFW0bQktpn2ApunL7mcTVUcRN1o1d8cXK8\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_list"
+					]
+				},
+				"description": "whereJson.group=\"true\" 必传；\nwhereJson.status=0 必传；\nwhereJson.client_ip 可传；\nwhereJson.alarm_type_id 可传；"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_历史告警_下钻_查询",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"findData\",\n    \"limit\": 10,\n    \"page\": 1,\n    \"whereJson\": {\"client_ip\": \"192.168.200.198\", \"alarm_type_id\": 6, \"status\": 0},\n    \"sortJson\": {\"alarm_time\": -1},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ3NzEzOTJ9.ufE3x_tFdp4pE5y04ljQjQ_I6oNX2npKDEVCwiApCv4\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_list"
+					]
+				},
+				"description": "whereJson.status=1 必传"
+			},
+			"response": []
+		},
+		{
+			"name": "告警管理_活动告警_修改",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"type": "text",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"action\": \"updateData\",\n    \"whereJson\": {\"status\": 1, \"client_ip\": \"192.168.200.197\", \"alarm_type_id\": 6},\n    \"updateJson\": {\"status\":0},\n    \"tocken\": \"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIxMjM0NTYiLCJyb2xlX2lkIjoxLCJleHAiOjE1NjQ5OTc0NTJ9.yL5BTbHTWKFW0bQktpn2ApunL7mcTVUcRN1o1d8cXK8\"\n}"
+				},
+				"url": {
+					"raw": "http://127.0.0.1:4000/api/python/alarm_list",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "4000",
+					"path": [
+						"api",
+						"python",
+						"alarm_list"
+					]
+				},
+				"description": "whereJson.status=1 必传；\nwhereJson.client_ip 必传；\nwhereJson.alarm_type_id 必传；"
+			},
+			"response": []
+		}
+	]
+}
